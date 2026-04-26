@@ -1,0 +1,241 @@
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap');
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'DM Sans',var(--font-sans),sans-serif;color:var(--color-text-primary);line-height:1.7;font-size:15px}
+  .wrap{max-width:680px;padding:2rem 0}
+  .header{border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:1.5rem;margin-bottom:2rem}
+  .app-badge{display:inline-flex;align-items:center;gap:8px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:4px 14px 4px 8px;margin-bottom:1rem}
+  .app-icon{width:28px;height:28px;border-radius:8px;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:14px}
+  .app-name{font-size:13px;font-weight:500;color:var(--color-text-secondary)}
+  h1{font-family:'Lora',var(--font-serif),serif;font-size:28px;font-weight:500;line-height:1.25;color:var(--color-text-primary);margin-bottom:.5rem}
+  .meta{font-size:13px;color:var(--color-text-tertiary)}
+  .toc{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:2rem;border:0.5px solid var(--color-border-tertiary)}
+  .toc-title{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
+  .toc ol{padding-left:1.2rem}
+  .toc li{font-size:13px;color:var(--color-text-secondary);padding:2px 0}
+  .toc a{color:var(--color-text-secondary);text-decoration:none}
+  .toc a:hover{color:var(--color-text-primary)}
+  section{margin-bottom:2rem}
+  h2{font-family:'Lora',serif;font-size:17px;font-weight:500;color:var(--color-text-primary);margin-bottom:.75rem;padding-top:.25rem}
+  p{margin-bottom:.75rem;color:var(--color-text-secondary);font-size:14px}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;border:0.5px solid}
+  .pill-green{background:#EAF3DE;border-color:#97C459;color:#3B6D11}
+  .pill-gray{background:var(--color-background-secondary);border-color:var(--color-border-secondary);color:var(--color-text-secondary)}
+  .pill-blue{background:#E6F1FB;border-color:#85B7EB;color:#185FA5}
+  .pill-amber{background:#FAEEDA;border-color:#EF9F27;color:#854F0B}
+  .pill-coral{background:#FAECE7;border-color:#F0997B;color:#993C1D}
+  .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
+  .dot-green{background:#3B6D11}
+  .dot-gray{background:var(--color-text-tertiary)}
+  .dot-blue{background:#185FA5}
+  .dot-amber{background:#854F0B}
+  .dot-coral{background:#993C1D}
+  .info-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:1rem 0}
+  .info-card p{margin-bottom:0;font-size:13px}
+  .warn-card{background:#FAEEDA;border:0.5px solid #EF9F27;border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:1rem 0}
+  .warn-card p{margin-bottom:0;font-size:13px;color:#854F0B}
+  .check-list{list-style:none;padding:0;margin:.5rem 0}
+  .check-list li{font-size:14px;color:var(--color-text-secondary);padding:3px 0 3px 1.4rem;position:relative}
+  .check-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:#639922}
+  .no-list{list-style:none;padding:0;margin:.5rem 0}
+  .no-list li{font-size:14px;color:var(--color-text-secondary);padding:3px 0 3px 1.4rem;position:relative}
+  .no-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:#D85A30}
+  .divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
+  .contact-card{border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-top:1rem}
+  .contact-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
+  .footer-note{font-size:12px;color:var(--color-text-tertiary);padding-top:1.5rem;border-top:0.5px solid var(--color-border-tertiary);margin-top:2rem}
+  @media(prefers-color-scheme:dark){
+    .pill-green{background:#173404;border-color:#3B6D11;color:#C0DD97}
+    .pill-blue{background:#042C53;border-color:#185FA5;color:#B5D4F4}
+    .pill-amber{background:#412402;border-color:#854F0B;color:#FAC775}
+    .pill-coral{background:#4A1B0C;border-color:#993C1D;color:#F5C4B3}
+    .dot-green{background:#97C459}
+    .dot-blue{background:#85B7EB}
+    .dot-amber{background:#EF9F27}
+    .dot-coral{background:#F0997B}
+    .check-list li::before{background:#97C459}
+    .no-list li::before{background:#F09595}
+    .warn-card{background:#412402;border-color:#854F0B}
+    .warn-card p{color:#FAC775}
+  }
+</style>
+<div class="wrap">
+  <div class="header">
+    <div class="app-badge">
+      <div class="app-icon">📚</div>
+      <span class="app-name">ReadVault</span>
+    </div>
+    <h1>Política de Privacidad</h1>
+    <p class="meta">Última actualización: 25 de abril de 2025 &nbsp;·&nbsp; Versión 1.1</p>
+  </div>
+
+  <div class="toc">
+    <div class="toc-title">Contenido</div>
+    <ol>
+      <li><a href="#s1">Quiénes somos</a></li>
+      <li><a href="#s2">Datos que recogemos</a></li>
+      <li><a href="#s3">Qué no recogemos</a></li>
+      <li><a href="#s4">Publicidad (Google AdMob)</a></li>
+      <li><a href="#s5">Cómo usamos los datos</a></li>
+      <li><a href="#s6">Almacenamiento y seguridad</a></li>
+      <li><a href="#s7">Retención y eliminación</a></li>
+      <li><a href="#s8">Terceros</a></li>
+      <li><a href="#s9">Derechos del usuario</a></li>
+      <li><a href="#s10">Cambios a esta política</a></li>
+      <li><a href="#s11">Contacto</a></li>
+    </ol>
+  </div>
+
+  <section id="s1">
+    <h2>1. Quiénes somos</h2>
+    <p>ReadVault es una aplicación para Android que permite guardar, organizar y releer artículos y enlaces web. Esta política describe cómo tratamos los datos de los usuarios de la aplicación.</p>
+    <p>El desarrollador responsable de la aplicación es el titular de la cuenta de Google Play bajo la que se publica ReadVault ("nosotros", "el desarrollador").</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s2">
+    <h2>2. Datos que recogemos</h2>
+    <p>ReadVault recoge únicamente los datos estrictamente necesarios para su funcionamiento:</p>
+    <div class="pill-row">
+      <span class="pill pill-blue"><span class="dot dot-blue"></span>Cuenta de Google (para backup)</span>
+      <span class="pill pill-gray"><span class="dot dot-gray"></span>Artículos y URLs guardados</span>
+      <span class="pill pill-gray"><span class="dot dot-gray"></span>Etiquetas y títulos creados</span>
+      <span class="pill pill-coral"><span class="dot dot-coral"></span>Datos de publicidad (vía AdMob)</span>
+    </div>
+    <div class="info-card">
+      <p><strong>Sobre el inicio de sesión con Google:</strong> Si el usuario activa la función de copia de seguridad, ReadVault solicita acceso a Google Drive mediante OAuth 2.0. Esto nos permite almacenar una copia de los datos en el propio Google Drive del usuario. Nunca accedemos a otros archivos del Drive. La autenticación es gestionada íntegramente por Google; ReadVault no almacena contraseñas ni tokens de acceso de forma permanente.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s3">
+    <h2>3. Qué no recogemos</h2>
+    <p>ReadVault <strong>no</strong> recopila ni accede a:</p>
+    <ul class="no-list">
+      <li>Información de identidad personal (nombre, dirección, número de teléfono)</li>
+      <li>Datos de ubicación</li>
+      <li>Datos financieros o de pago</li>
+      <li>Contactos, mensajes SMS ni registros de llamadas</li>
+      <li>Cámara, micrófono ni archivos multimedia</li>
+      <li>Datos de salud o biométricos</li>
+      <li>Lista de otras aplicaciones instaladas</li>
+      <li>Identificadores de dispositivo persistentes (IMEI, IMSI, etc.)</li>
+    </ul>
+    <p>El desarrollador <strong>no vende datos personales</strong> a terceros con ningún fin comercial propio.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s4">
+    <h2>4. Publicidad (Google AdMob)</h2>
+    <p>ReadVault muestra anuncios gestionados por <strong>Google AdMob</strong> (Google LLC). Para ofrecer anuncios relevantes, AdMob puede recopilar y usar los siguientes datos del dispositivo:</p>
+    <ul class="check-list">
+      <li>Identificador de publicidad de Android (Android Advertising ID / AAID), que el usuario puede restablecer o desactivar en los ajustes del dispositivo</li>
+      <li>Dirección IP aproximada (para determinar región geográfica)</li>
+      <li>Información del dispositivo (modelo, versión de SO, idioma)</li>
+      <li>Datos de interacción con los anuncios (impresiones, clics)</li>
+    </ul>
+    <div class="warn-card">
+      <p><strong>Aviso importante:</strong> Google AdMob puede usar estos datos para mostrar anuncios personalizados basados en los intereses del usuario. Esta recopilación la realiza Google directamente bajo su propia política de privacidad. ReadVault no accede ni almacena estos datos publicitarios.</p>
+    </div>
+    <p>Para más información sobre cómo Google usa los datos de publicidad, consulta la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a> y la <a href="https://support.google.com/admob/answer/6128543" target="_blank">política de AdMob</a>.</p>
+    <p>Los usuarios pueden optar por no recibir anuncios personalizados en cualquier momento desde <strong>Ajustes del dispositivo �?Google �?Anuncios �?Inhabilitar personalización de anuncios</strong>.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s5">
+    <h2>5. Cómo usamos los datos</h2>
+    <p>Los datos recogidos por ReadVault se usan exclusivamente para:</p>
+    <ul class="check-list">
+      <li>Guardar y mostrar los artículos y enlaces que el usuario almacena en la app</li>
+      <li>Realizar copias de seguridad en el Google Drive personal del usuario (solo si el usuario activa esta función)</li>
+      <li>Restaurar los datos del usuario desde la copia de seguridad en un nuevo dispositivo</li>
+      <li>Mostrar anuncios a través de Google AdMob para financiar el desarrollo de la app</li>
+    </ul>
+    <p>Los datos del contenido guardado (artículos, URLs, etiquetas) nunca se usan para personalizar anuncios ni se comparten con AdMob.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s6">
+    <h2>6. Almacenamiento y seguridad</h2>
+    <div class="pill-row">
+      <span class="pill pill-green"><span class="dot dot-green"></span>Almacenamiento local (Room/SQLite)</span>
+      <span class="pill pill-blue"><span class="dot dot-blue"></span>Google Drive del propio usuario</span>
+    </div>
+    <p>Los datos de la app se almacenan localmente en el dispositivo mediante una base de datos SQLite protegida por el sandbox de Android. La copia de seguridad opcional se deposita directamente en el Google Drive del usuario, protegido por las políticas de seguridad de Google.</p>
+    <p>La comunicación con Google Drive se realiza siempre mediante HTTPS/TLS. El desarrollador no opera servidores propios ni almacena datos del usuario fuera del dispositivo o su Google Drive.</p>
+    <p>Los datos de publicidad son gestionados íntegramente por los servidores de Google bajo sus propios estándares de seguridad.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s7">
+    <h2>7. Retención y eliminación</h2>
+    <p>Los datos del usuario permanecen en el dispositivo mientras la app esté instalada. Al desinstalar la app, Android elimina automáticamente todos los datos locales.</p>
+    <p>La copia de seguridad en Google Drive puede eliminarse en cualquier momento directamente desde Google Drive. El usuario puede también eliminar artículos individualmente desde la app.</p>
+    <p>ReadVault no requiere creación de cuenta propia. No existen datos del usuario almacenados en servidores del desarrollador que deban eliminarse por solicitud.</p>
+    <p>Los datos gestionados por AdMob están sujetos a la <a href="https://policies.google.com/privacy" target="_blank">política de retención de datos de Google</a>.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s8">
+    <h2>8. Terceros</h2>
+    <div class="pill-row">
+      <span class="pill pill-blue"><span class="dot dot-blue"></span>Google Drive API</span>
+      <span class="pill pill-coral"><span class="dot dot-coral"></span>Google AdMob</span>
+      <span class="pill pill-amber"><span class="dot dot-amber"></span>Drive: solo si el usuario activa el backup</span>
+    </div>
+    <p>ReadVault interactúa con los siguientes servicios de <strong>Google LLC</strong>:</p>
+    <ul class="check-list">
+      <li><strong>Google Drive API</strong> �?para la copia de seguridad opcional en la nube, iniciada por el usuario.</li>
+      <li><strong>Google AdMob</strong> �?para la gestión y visualización de anuncios en la app. AdMob opera como proveedor de servicios independiente bajo sus propias políticas.</li>
+    </ul>
+    <p>En ambos casos aplican la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a> y sus respectivas condiciones de servicio. ReadVault no integra ningún otro SDK de analítica, seguimiento ni servicios de terceros adicionales.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s9">
+    <h2>9. Derechos del usuario</h2>
+    <p>En cualquier momento, el usuario tiene derecho a:</p>
+    <ul class="check-list">
+      <li><strong>Acceder</strong> a todos sus datos, visibles directamente en la app</li>
+      <li><strong>Eliminar</strong> artículos individualmente o toda la base de datos desinstalando la app</li>
+      <li><strong>Revocar el acceso</strong> de ReadVault a Google Drive desde la <a href="https://myaccount.google.com/permissions" target="_blank">configuración de cuenta de Google</a></li>
+      <li><strong>Inhabilitar los anuncios personalizados</strong> desde los ajustes de publicidad del dispositivo Android</li>
+      <li><strong>Exportar</strong> sus datos (funcionalidad disponible en la app)</li>
+    </ul>
+    <p>Los usuarios en la Unión Europea tienen derechos adicionales conforme al RGPD, incluyendo rectificación y portabilidad de datos. Para ejercer cualquier derecho relacionado con datos gestionados por el desarrollador, puede contactarnos por los medios indicados en la sección 11.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s10">
+    <h2>10. Cambios a esta política</h2>
+    <p>Si realizamos cambios materiales en esta política de privacidad, notificaremos a los usuarios mediante una actualización en la ficha de Google Play y, cuando sea posible, mediante un aviso en la propia aplicación. La fecha de "última actualización" al inicio del documento siempre refleja la versión vigente.</p>
+    <p>Le recomendamos revisar esta política periódicamente.</p>
+  </section>
+
+  <hr class="divider">
+
+  <section id="s11">
+    <h2>11. Contacto</h2>
+    <p>Para cualquier consulta, solicitud o queja relacionada con la privacidad de sus datos, puede contactarnos en:</p>
+    <div class="contact-card">
+      <div class="contact-label">Punto de contacto de privacidad</div>
+      <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:4px">Correo electrónico: <strong style="color:var(--color-text-primary)">[williew@hotmail.com]</strong></p>
+ 
+    </div>
+  </section>
+
+  <div class="footer-note">
+    Esta política cumple con los requisitos de la <a href="https://support.google.com/googleplay/android-developer/answer/10144311" target="_blank">política de datos de usuario de Google Play</a>, el Reglamento General de Protección de Datos (RGPD/GDPR), y las <a href="https://support.google.com/admob/answer/6128543" target="_blank">políticas de uso de Google AdMob</a>.
+  </div>
+</div>
