@@ -1,67 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Privacidad — ReadVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@400;500&display=swap');
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:'DM Sans',var(--font-sans),sans-serif;color:var(--color-text-primary);line-height:1.7;font-size:15px}
-  .wrap{max-width:680px;padding:2rem 0}
-  .header{border-bottom:0.5px solid var(--color-border-tertiary);padding-bottom:1.5rem;margin-bottom:2rem}
-  .app-badge{display:inline-flex;align-items:center;gap:8px;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:20px;padding:4px 14px 4px 8px;margin-bottom:1rem}
-  .app-icon{width:28px;height:28px;border-radius:8px;background:#1a1a2e;display:flex;align-items:center;justify-content:center;font-size:14px}
-  .app-name{font-size:13px;font-weight:500;color:var(--color-text-secondary)}
-  h1{font-family:'Lora',var(--font-serif),serif;font-size:28px;font-weight:500;line-height:1.25;color:var(--color-text-primary);margin-bottom:.5rem}
-  .meta{font-size:13px;color:var(--color-text-tertiary)}
-  .toc{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-bottom:2rem;border:0.5px solid var(--color-border-tertiary)}
-  .toc-title{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.6rem}
-  .toc ol{padding-left:1.2rem}
-  .toc li{font-size:13px;color:var(--color-text-secondary);padding:2px 0}
-  .toc a{color:var(--color-text-secondary);text-decoration:none}
-  .toc a:hover{color:var(--color-text-primary)}
-  section{margin-bottom:2rem}
-  h2{font-family:'Lora',serif;font-size:17px;font-weight:500;color:var(--color-text-primary);margin-bottom:.75rem;padding-top:.25rem}
-  p{margin-bottom:.75rem;color:var(--color-text-secondary);font-size:14px}
-  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0}
-  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:500;border:0.5px solid}
-  .pill-green{background:#EAF3DE;border-color:#97C459;color:#3B6D11}
-  .pill-gray{background:var(--color-background-secondary);border-color:var(--color-border-secondary);color:var(--color-text-secondary)}
-  .pill-blue{background:#E6F1FB;border-color:#85B7EB;color:#185FA5}
-  .pill-amber{background:#FAEEDA;border-color:#EF9F27;color:#854F0B}
-  .pill-coral{background:#FAECE7;border-color:#F0997B;color:#993C1D}
-  .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
-  .dot-green{background:#3B6D11}
-  .dot-gray{background:var(--color-text-tertiary)}
-  .dot-blue{background:#185FA5}
-  .dot-amber{background:#854F0B}
-  .dot-coral{background:#993C1D}
-  .info-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:1rem 0}
-  .info-card p{margin-bottom:0;font-size:13px}
-  .warn-card{background:#FAEEDA;border:0.5px solid #EF9F27;border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin:1rem 0}
-  .warn-card p{margin-bottom:0;font-size:13px;color:#854F0B}
-  .check-list{list-style:none;padding:0;margin:.5rem 0}
-  .check-list li{font-size:14px;color:var(--color-text-secondary);padding:3px 0 3px 1.4rem;position:relative}
-  .check-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:#639922}
-  .no-list{list-style:none;padding:0;margin:.5rem 0}
-  .no-list li{font-size:14px;color:var(--color-text-secondary);padding:3px 0 3px 1.4rem;position:relative}
-  .no-list li::before{content:'';position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:#D85A30}
-  .divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
-  .contact-card{border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);padding:1rem 1.25rem;margin-top:1rem}
-  .contact-label{font-size:11px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem}
-  .footer-note{font-size:12px;color:var(--color-text-tertiary);padding-top:1.5rem;border-top:0.5px solid var(--color-border-tertiary);margin-top:2rem}
-  @media(prefers-color-scheme:dark){
-    .pill-green{background:#173404;border-color:#3B6D11;color:#C0DD97}
-    .pill-blue{background:#042C53;border-color:#185FA5;color:#B5D4F4}
-    .pill-amber{background:#412402;border-color:#854F0B;color:#FAC775}
-    .pill-coral{background:#4A1B0C;border-color:#993C1D;color:#F5C4B3}
-    .dot-green{background:#97C459}
-    .dot-blue{background:#85B7EB}
-    .dot-amber{background:#EF9F27}
-    .dot-coral{background:#F0997B}
-    .check-list li::before{background:#97C459}
-    .no-list li::before{background:#F09595}
-    .warn-card{background:#412402;border-color:#854F0B}
-    .warn-card p{color:#FAC775}
-  }
-</style>
+    :root {
+      --bg: #ffffff;
+      --bg-secondary: #f7f6f3;
+      --text-primary: #1a1917;
+      --text-secondary: #4a4845;
+      --text-tertiary: #8a8884;
+      --border: rgba(0,0,0,0.10);
+      --border-medium: rgba(0,0,0,0.18);
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1a1917;
+        --bg-secondary: #242320;
+        --text-primary: #f0ede8;
+        --text-secondary: #b0ada8;
+        --text-tertiary: #6a6864;
+        --border: rgba(255,255,255,0.10);
+        --border-medium: rgba(255,255,255,0.18);
+      }
+      .pill-green { background: #173404 !important; border-color: #3B6D11 !important; color: #C0DD97 !important; }
+      .pill-blue  { background: #042C53 !important; border-color: #185FA5 !important; color: #B5D4F4 !important; }
+      .pill-amber { background: #412402 !important; border-color: #854F0B !important; color: #FAC775 !important; }
+      .pill-coral { background: #4A1B0C !important; border-color: #993C1D !important; color: #F5C4B3 !important; }
+      .warn-card  { background: #412402 !important; border-color: #854F0B !important; }
+      .warn-card p { color: #FAC775 !important; }
+      .check-list li::before { background: #97C459 !important; }
+      .no-list li::before    { background: #F09595 !important; }
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 15px;
+      padding: 0 1rem;
+    }
+
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    /* Header */
+    .header {
+      border-bottom: 0.5px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 14px 4px 8px;
+      margin-bottom: 1rem;
+    }
+    .app-icon {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: #1a1a2e;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 15px;
+    }
+    .app-name { font-size: 13px; font-weight: 500; color: var(--text-secondary); }
+    h1 {
+      font-family: 'Lora', serif;
+      font-size: 30px; font-weight: 500;
+      line-height: 1.25;
+      color: var(--text-primary);
+      margin-bottom: .4rem;
+    }
+    .meta { font-size: 13px; color: var(--text-tertiary); }
+
+    /* TOC */
+    .toc {
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .toc-title {
+      font-size: 11px; font-weight: 500;
+      color: var(--text-tertiary);
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: .6rem;
+    }
+    .toc ol { padding-left: 1.2rem; }
+    .toc li { font-size: 13px; color: var(--text-secondary); padding: 2px 0; }
+    .toc a { color: var(--text-secondary); text-decoration: none; }
+    .toc a:hover { color: var(--text-primary); text-decoration: underline; }
+
+    /* Sections */
+    section { margin-bottom: 2rem; }
+    h2 {
+      font-family: 'Lora', serif;
+      font-size: 18px; font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: .75rem;
+      padding-top: .25rem;
+    }
+    p { margin-bottom: .75rem; color: var(--text-secondary); font-size: 14px; }
+    a { color: #185FA5; }
+    strong { color: var(--text-primary); }
+
+    /* Pills */
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 1rem 0; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 20px;
+      font-size: 12px; font-weight: 500; border: 0.5px solid;
+    }
+    .pill-green { background: #EAF3DE; border-color: #97C459; color: #3B6D11; }
+    .pill-gray  { background: var(--bg-secondary); border-color: var(--border-medium); color: var(--text-secondary); }
+    .pill-blue  { background: #E6F1FB; border-color: #85B7EB; color: #185FA5; }
+    .pill-amber { background: #FAEEDA; border-color: #EF9F27; color: #854F0B; }
+    .pill-coral { background: #FAECE7; border-color: #F0997B; color: #993C1D; }
+    .dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+    .dot-green { background: #3B6D11; }
+    .dot-gray  { background: var(--text-tertiary); }
+    .dot-blue  { background: #185FA5; }
+    .dot-amber { background: #854F0B; }
+    .dot-coral { background: #993C1D; }
+
+    /* Cards */
+    .info-card {
+      background: var(--bg-secondary);
+      border: 0.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem; margin: 1rem 0;
+    }
+    .info-card p { margin-bottom: 0; font-size: 13px; }
+    .warn-card {
+      background: #FAEEDA;
+      border: 0.5px solid #EF9F27;
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem; margin: 1rem 0;
+    }
+    .warn-card p { margin-bottom: 0; font-size: 13px; color: #854F0B; }
+
+    /* Lists */
+    .check-list { list-style: none; padding: 0; margin: .5rem 0; }
+    .check-list li {
+      font-size: 14px; color: var(--text-secondary);
+      padding: 3px 0 3px 1.4rem; position: relative;
+    }
+    .check-list li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 8px; height: 8px; border-radius: 50%; background: #639922;
+    }
+    .no-list { list-style: none; padding: 0; margin: .5rem 0; }
+    .no-list li {
+      font-size: 14px; color: var(--text-secondary);
+      padding: 3px 0 3px 1.4rem; position: relative;
+    }
+    .no-list li::before {
+      content: ''; position: absolute; left: 0; top: 10px;
+      width: 8px; height: 8px; border-radius: 50%; background: #D85A30;
+    }
+
+    /* Misc */
+    .divider { border: none; border-top: 0.5px solid var(--border); margin: 2rem 0; }
+    .contact-card {
+      border: 0.5px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.25rem; margin-top: 1rem;
+    }
+    .contact-label {
+      font-size: 11px; font-weight: 500;
+      color: var(--text-tertiary);
+      text-transform: uppercase; letter-spacing: .06em;
+      margin-bottom: .5rem;
+    }
+    .footer-note {
+      font-size: 12px; color: var(--text-tertiary);
+      padding-top: 1.5rem;
+      border-top: 0.5px solid var(--border);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
 <div class="wrap">
+
   <div class="header">
     <div class="app-badge">
       <div class="app-icon">📚</div>
@@ -143,7 +282,7 @@
       <p><strong>Aviso importante:</strong> Google AdMob puede usar estos datos para mostrar anuncios personalizados basados en los intereses del usuario. Esta recopilación la realiza Google directamente bajo su propia política de privacidad. ReadVault no accede ni almacena estos datos publicitarios.</p>
     </div>
     <p>Para más información sobre cómo Google usa los datos de publicidad, consulta la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a> y la <a href="https://support.google.com/admob/answer/6128543" target="_blank">política de AdMob</a>.</p>
-    <p>Los usuarios pueden optar por no recibir anuncios personalizados en cualquier momento desde <strong>Ajustes del dispositivo �?Google �?Anuncios �?Inhabilitar personalización de anuncios</strong>.</p>
+    <p>Los usuarios pueden optar por no recibir anuncios personalizados en cualquier momento desde <strong>Ajustes del dispositivo → Google → Anuncios → Inhabilitar personalización de anuncios</strong>.</p>
   </section>
 
   <hr class="divider">
@@ -194,8 +333,8 @@
     </div>
     <p>ReadVault interactúa con los siguientes servicios de <strong>Google LLC</strong>:</p>
     <ul class="check-list">
-      <li><strong>Google Drive API</strong> �?para la copia de seguridad opcional en la nube, iniciada por el usuario.</li>
-      <li><strong>Google AdMob</strong> �?para la gestión y visualización de anuncios en la app. AdMob opera como proveedor de servicios independiente bajo sus propias políticas.</li>
+      <li><strong>Google Drive API</strong> — para la copia de seguridad opcional en la nube, iniciada por el usuario.</li>
+      <li><strong>Google AdMob</strong> — para la gestión y visualización de anuncios en la app. AdMob opera como proveedor de servicios independiente bajo sus propias políticas.</li>
     </ul>
     <p>En ambos casos aplican la <a href="https://policies.google.com/privacy" target="_blank">Política de Privacidad de Google</a> y sus respectivas condiciones de servicio. ReadVault no integra ningún otro SDK de analítica, seguimiento ni servicios de terceros adicionales.</p>
   </section>
@@ -230,12 +369,17 @@
     <p>Para cualquier consulta, solicitud o queja relacionada con la privacidad de sus datos, puede contactarnos en:</p>
     <div class="contact-card">
       <div class="contact-label">Punto de contacto de privacidad</div>
-      <p style="font-size:14px;color:var(--color-text-secondary);margin-bottom:4px">Correo electrónico: <strong style="color:var(--color-text-primary)">[williew@hotmail.com]</strong></p>
- 
+      <p style="font-size:14px;color:var(--text-secondary);margin-bottom:4px">Correo electrónico: <strong style="color:var(--text-primary)">[williew@hotmail.com]</strong></p>
     </div>
   </section>
 
   <div class="footer-note">
-    Esta política cumple con los requisitos de la <a href="https://support.google.com/googleplay/android-developer/answer/10144311" target="_blank">política de datos de usuario de Google Play</a>, el Reglamento General de Protección de Datos (RGPD/GDPR), y las <a href="https://support.google.com/admob/answer/6128543" target="_blank">políticas de uso de Google AdMob</a>.
+    Esta política cumple con los requisitos de la
+    <a href="https://support.google.com/googleplay/android-developer/answer/10144311" target="_blank">política de datos de usuario de Google Play</a>,
+    el Reglamento General de Protección de Datos (RGPD/GDPR), y las
+    <a href="https://support.google.com/admob/answer/6128543" target="_blank">políticas de uso de Google AdMob</a>.
   </div>
+
 </div>
+</body>
+</html>
